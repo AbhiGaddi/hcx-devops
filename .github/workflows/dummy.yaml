@@ -5,12 +5,12 @@ on:
     on:
         branch_protection_rule:
             types: [ created, deleted ]
-  inputs:
-          cluster-name:
+        inputs:
+           cluster-name:
             description: 'Build Cluster'
             required: true
             default: 'true'
-          namespace:
+           namespace:
             description: 'Build ENV'
             required: true
             default: 'true'
