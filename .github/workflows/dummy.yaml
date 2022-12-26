@@ -4,6 +4,7 @@ on:
     push:
       branches:
         - sprint-27
+        - sprint-27-local
     inputs:
       cluster-name:
         description: 'Build Cluster'
