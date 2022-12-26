@@ -1,25 +1,21 @@
 name: Deploy
 on:
   workflow_dispatch:
-    name: Deploy
-    on:
-        branch_protection_rule:
-            types: [ created, deleted ]
-        inputs:
-           cluster-name:
-            description: 'Build Cluster'
-            required: true
-            default: 'true'
-           namespace:
-            description: 'Build ENV'
-            required: true
-            default: 'true'
-            jobs:
-              deployment:
-                 runs-on: 'ubuntu-latest'
-                 steps:
-                 - uses: actions/checkout@v2
-                 - name: path
-                   run: pwd
-
-
+    branch_protection_rule:
+      types: [ created, deleted ]
+    inputs:
+      cluster-name:
+        description: 'Build Cluster'
+        required: true
+        default: 'true'
+      namespace:
+        description: 'Build ENV'
+        required : true
+        default: 'true'
+jobs:
+  deployment:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v2
+      - name : path
+        run : pwd
