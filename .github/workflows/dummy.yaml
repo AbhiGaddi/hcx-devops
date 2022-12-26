@@ -1,6 +1,9 @@
 name: Deploy
 on:
   workflow_dispatch:
+    push:
+      branches:
+        - sprint-27
     inputs:
       cluster-name:
         description: 'Build Cluster'
