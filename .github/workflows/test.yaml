@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy a Job
 on:
   workflow_dispatch:
     inputs:
@@ -10,6 +10,9 @@ on:
         description: 'Build ENV'
         required : true
         default: 'true'
+  pull_request :
+    branches:
+      -'*'
 jobs:
   deployment:
     runs-on: 'ubuntu-latest'
